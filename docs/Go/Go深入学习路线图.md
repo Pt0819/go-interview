@@ -24,10 +24,10 @@
 
 | 序号 | 文档 | 核心内容 |
 |------|------|----------|
-| 1.1 | `slice实践以及底层实现.md` | ptr/len/cap 三元组、共享底层数组、append 扩容策略（< 1024 翻倍，>= 1024 约增长 25%） |
-| 1.2 | `结构体是否可以比较.md` | 字段对齐与内存布局、`==` 运算符的前提条件、不可比较类型（slice/map/function） |
-| 1.3 | `Interface内部实现的理解.md` | iface/eface 结构、数据指针 + 类型指针、接口判 nil 的经典陷阱 |
-| 1.4 | `常用包.md` | fmt/strings/strconv/sync 等标准库的高效用法与设计模式 |
+| 1.1 | [`slice实践以及底层实现.md`](./slice实践以及底层实现.md) | ptr/len/cap 三元组、共享底层数组、append 扩容策略（< 1024 翻倍，>= 1024 约增长 25%） |
+| 1.2 | [`结构体是否可以比较.md`](./结构体是否可以比较.md) | 字段对齐与内存布局、`==` 运算符的前提条件、不可比较类型（slice/map/function） |
+| 1.3 | [`Interface内部实现的理解.md`](./Interface内部实现的理解.md) | iface/eface 结构、数据指针 + 类型指针、接口判 nil 的经典陷阱 |
+| 1.4 | [`常用包.md`](./常用包.md) | fmt/strings/strconv/sync 等标准库的高效用法与设计模式 |
 
 ### 关键概念提要
 
@@ -69,11 +69,11 @@
 
 | 序号 | 文档 | 核心内容 |
 |------|------|----------|
-| 2.1 | `CSP并发模型.md` | CSP 哲学："通过通信来共享数据，而不是通过共享内存来通信" |
-| 2.2 | `goroutine什么情况下会阻塞.md` | 六大阻塞场景：channel 收发、系统调用、time.Sleep、GC、锁争用、network I/O |
-| 2.3 | `gofunc过程.md` | `go func(){}()` 的背后：创建 g 结构体 → 初始化栈 → 加入 P 本地队列 |
-| 2.4 | `chan底层原理.md` | hchan 核心字段（buf/sendq/recvq/lock）、缓冲与非缓冲、FIFO 唤醒 |
-| 2.5 | `Context的使用场景.md` | 超时取消、链式传递、goroutine 生命周期管理、最佳实践 |
+| 2.1 | [`CSP并发模型.md`](./CSP并发模型.md) | CSP 哲学："通过通信来共享数据，而不是通过共享内存来通信" |
+| 2.2 | [`goroutine什么情况下会阻塞.md`](./goroutine什么情况下会阻塞.md) | 六大阻塞场景：channel 收发、系统调用、time.Sleep、GC、锁争用、network I/O |
+| 2.3 | [`gofunc过程.md`](./gofunc过程.md) | `go func(){}()` 的背后：创建 g 结构体 → 初始化栈 → 加入 P 本地队列 |
+| 2.4 | [`chan底层原理.md`](./chan底层原理.md) | hchan 核心字段（buf/sendq/recvq/lock）、缓冲与非缓冲、FIFO 唤醒 |
+| 2.5 | [`Context的使用场景.md`](./Context的使用场景.md) | 超时取消、链式传递、goroutine 生命周期管理、最佳实践 |
 
 ### 关键概念提要
 
@@ -115,12 +115,12 @@
 
 | 序号 | 文档 | 核心内容 |
 |------|------|----------|
-| 3.1 | `mutex怎么使用，乐观和悲观锁的实现.md` | sync.Mutex 基础用法 + 乐观锁（CAS 自旋）vs 悲观锁（挂起等待）的哲学 |
-| 3.2 | `乐观锁与悲观锁与Golang.md` | Go 中 CAS 的实践场景：atomic、自旋锁、乐观更新数据库记录 |
-| 3.3 | `互斥锁实现原理剖析.md` | sync.Mutex 源码：KEY 值、正常/饥饿模式、自旋条件、W 状态 |
-| 3.4 | `读写锁的实现及底层原理.md` | sync.RWMutex：读锁可重入设计、写者饥饿问题、RLock/RUnlock 的性能路径 |
-| 3.5 | `读写分离 sync.Map.md` | read map（readOnly）+ dirty map（entry.p 指针）、miss 计数与晋升 |
-| 3.6 | `sync.Pool.md` | per-P localPool、private/shared、victim cache 的 GC 延迟清空策略 |
+| 3.1 | [`mutex怎么使用，乐观和悲观锁的实现.md`](./mutex怎么使用，乐观和悲观锁的实现.md) | sync.Mutex 基础用法 + 乐观锁（CAS 自旋）vs 悲观锁（挂起等待）的哲学 |
+| 3.2 | [`乐观锁与悲观锁与Golang.md`](./乐观锁与悲观锁与Golang.md) | Go 中 CAS 的实践场景：atomic、自旋锁、乐观更新数据库记录 |
+| 3.3 | [`互斥锁实现原理剖析.md`](./互斥锁实现原理剖析.md) | sync.Mutex 源码：KEY 值、正常/饥饿模式、自旋条件、W 状态 |
+| 3.4 | [`读写锁的实现及底层原理.md`](./读写锁的实现及底层原理.md) | sync.RWMutex：读锁可重入设计、写者饥饿问题、RLock/RUnlock 的性能路径 |
+| 3.5 | [`读写分离 sync.Map.md`](./读写分离 sync.Map.md) | read map（readOnly）+ dirty map（entry.p 指针）、miss 计数与晋升 |
+| 3.6 | [`sync.Pool.md`](./sync.Pool.md) | per-P localPool、private/shared、victim cache 的 GC 延迟清空策略 |
 
 ### 关键概念提要
 
@@ -163,13 +163,13 @@
 
 | 序号 | 文档 | 核心内容 |
 |------|------|----------|
-| 4.1 | `go runtime 简析.md` | 运行时全景：调度器、内存分配器、GC 三大子系统的职责边界 |
-| 4.2 | `线程的实现模型.md` | 1:1、N:1、M:N 三种线程模型，解释 Go 为什么选择 M:N |
-| 4.3 | `GPM调度模型.md` | G/P/M 三元组关系、本地队列（runq）+ 全局队列（runqhead）、work-stealing |
-| 4.4 | `Go协程的栈内存管理.md` | 栈 2KB 起步、栈拷贝（stack copying）、栈的写屏障、缩容策略 |
-| 4.5 | `gopark函数和goready函数原理分析.md` | gopark→goready 对偶：挂起当前 g → 唤醒目标 g → 加入 runq |
-| 4.6 | `特权 Goroutine g0.md` | 每个 M 有两个 g（g0 管理栈 + gsignal 信号栈），schedule() 必须跑在 g0 上 |
-| 4.7 | `如何回收goroutine.md` | goroutine 退出路径：goexit → 写屏障 → gFree 链表复用 g 对象 |
+| 4.1 | [`go runtime 简析.md`](./go runtime 简析.md) | 运行时全景：调度器、内存分配器、GC 三大子系统的职责边界 |
+| 4.2 | [`线程的实现模型.md`](./线程的实现模型.md) | 1:1、N:1、M:N 三种线程模型，解释 Go 为什么选择 M:N |
+| 4.3 | [`GPM调度模型.md`](./GPM调度模型.md) | G/P/M 三元组关系、本地队列（runq）+ 全局队列（runqhead）、work-stealing |
+| 4.4 | [`Go协程的栈内存管理.md`](./Go协程的栈内存管理.md) | 栈 2KB 起步、栈拷贝（stack copying）、栈的写屏障、缩容策略 |
+| 4.5 | [`gopark函数和goready函数原理分析.md`](./gopark函数和goready函数原理分析.md) | gopark→goready 对偶：挂起当前 g → 唤醒目标 g → 加入 runq |
+| 4.6 | [`特权 Goroutine g0.md`](./特权 Goroutine g0.md) | 每个 M 有两个 g（g0 管理栈 + gsignal 信号栈），schedule() 必须跑在 g0 上 |
+| 4.7 | [`如何回收goroutine.md`](./如何回收goroutine.md) | goroutine 退出路径：goexit → 写屏障 → gFree 链表复用 g 对象 |
 
 ### 关键概念提要
 
@@ -214,10 +214,10 @@
 
 | 序号 | 文档 | 核心内容 |
 |------|------|----------|
-| 5.1 | `GC 是怎样监听你的应用的.md` | GC 触发条件：GOGC 参数、目标堆大小、定时强制 GC（2 分钟 max interval） |
-| 5.2 | `GC垃圾回收算法.md` | 三色标记 + 混合写屏障、并发标记的四个阶段、白色对象 = 垃圾 |
-| 5.3 | `Stop the World (STW).md` | STW 的时间线演进、哪些阶段需要 STW、Go 1.14+ 的 STW 优化 |
-| 5.4 | `内存泄露的发现与排查.md` | pprof heap 差分分析、`--base` 对比、持续增长 vs 峰值不降两种泄露模式 |
+| 5.1 | [`GC 是怎样监听你的应用的.md`](./GC 是怎样监听你的应用的.md) | GC 触发条件：GOGC 参数、目标堆大小、定时强制 GC（2 分钟 max interval） |
+| 5.2 | [`GC垃圾回收算法.md`](./GC垃圾回收算法.md) | 三色标记 + 混合写屏障、并发标记的四个阶段、白色对象 = 垃圾 |
+| 5.3 | [`Stop the World (STW).md`](./Stop the World (STW).md) | STW 的时间线演进、哪些阶段需要 STW、Go 1.14+ 的 STW 优化 |
+| 5.4 | [`内存泄露的发现与排查.md`](./内存泄露的发现与排查.md) | pprof heap 差分分析、`--base` 对比、持续增长 vs 峰值不降两种泄露模式 |
 
 ### 关键概念提要
 
@@ -262,11 +262,11 @@
 
 | 序号 | 文档 | 核心内容 |
 |------|------|----------|
-| 6.1 | `长连接和短连接的学习.md` | TCP 连接管理的开销模型：三次握手 + 四次挥手、TIME_WAIT |
-| 6.2 | `HTTP Client大量长连接保持.md` | Transport 连接池：MaxIdleConns、MaxIdleConnsPerHost、IdleConnTimeout、Keep-Alive |
-| 6.3 | `gin路由树.md` | radix tree 路由匹配、`:param` 与 `*filepath` 通配符、节点优先级 |
-| 6.4 | `详解通信数据协议ProtoBuf.md` | varint/zigzag 编码、wire type、字段编号 1-15 vs 16+、向后兼容原理 |
-| 6.5 | `dlv分析golang进程.md` | dlv debug / attach / core 三种模式、断点、goroutine 切换、条件断点 |
+| 6.1 | [`长连接和短连接的学习.md`](./长连接和短连接的学习.md) | TCP 连接管理的开销模型：三次握手 + 四次挥手、TIME_WAIT |
+| 6.2 | [`HTTP Client大量长连接保持.md`](./HTTP Client大量长连接保持.md) | Transport 连接池：MaxIdleConns、MaxIdleConnsPerHost、IdleConnTimeout、Keep-Alive |
+| 6.3 | [`gin路由树.md`](./gin路由树.md) | radix tree 路由匹配、`:param` 与 `*filepath` 通配符、节点优先级 |
+| 6.4 | [`详解通信数据协议ProtoBuf.md`](./详解通信数据协议ProtoBuf.md) | varint/zigzag 编码、wire type、字段编号 1-15 vs 16+、向后兼容原理 |
+| 6.5 | [`dlv分析golang进程.md`](./dlv分析golang进程.md) | dlv debug / attach / core 三种模式、断点、goroutine 切换、条件断点 |
 
 ### 关键概念提要
 
